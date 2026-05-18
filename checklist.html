@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Camera Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background: #ddd;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .tab-button.active {
+      background: #0b7285;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .checklist-item {
+      background: #f1f8fa;
+      border-left: 4px solid #0b7285;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Home Security Camera Checklist</h1>
+    <p class="subtitle">A practical checklist for non-technical homeowners</p>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="buying">Before Buying</button>
+      <button class="tab-button" data-tab="setup">During Setup</button>
+      <button class="tab-button" data-tab="ongoing">Ongoing Use</button>
+    </div>
+
+    <div id="buying" class="tab-content active">
+      <h2>Before Buying</h2>
+      <div class="checklist-item">Check whether the vendor provides regular firmware updates.</div>
+      <div class="checklist-item">Review whether cloud storage is optional or required.</div>
+      <div class="checklist-item">Look for support for strong passwords or multifactor authentication.</div>
+    </div>
+
+    <div id="setup" class="tab-content">
+      <h2>During Setup</h2>
+      <div class="checklist-item">Change the default password immediately.</div>
+      <div class="checklist-item">Disable remote access features you do not need.</div>
+      <div class="checklist-item">Update the camera firmware before regular use.</div>
+    </div>
+
+    <div id="ongoing" class="tab-content">
+      <h2>Ongoing Use</h2>
+      <div class="checklist-item">Review camera access permissions regularly.</div>
+      <div class="checklist-item">Check for firmware updates every few months.</div>
+      <div class="checklist-item">Remove or replace devices that no longer receive updates.</div>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll(".tab-button");
+    const tabs = document.querySelectorAll(".tab-content");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-tab");
+
+        buttons.forEach(btn => btn.classList.remove("active"));
+        tabs.forEach(tab => tab.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
