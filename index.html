@@ -1,129 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Camera Checklist</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
       margin: 0;
-      padding: 0;
+      padding: 24px;
+      background: #102339;
+      color: #FFFFFF;
+      line-height: 1.6;
+      background-image:
+        linear-gradient(rgba(16, 35, 57, 0.52), rgba(16, 35, 57, 0.52)),
+        url("camera-image.png");
+      background-size: cover;
+      background-position:270px 200px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 1000px;
+      margin: 25px auto;
+      padding: 25px;
+      background: rgba(1, 5, 7, 0.309);
+      border-radius: 35px;
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 0.25rem;
     }
 
     .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 30px;
+      margin-top: 0;
+      color: #d5d3d3;
+      margin-bottom: 2rem;
     }
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 25px;
-      flex-wrap: wrap;
-    }
-
-    .tab-button {
-      padding: 10px 16px;
-      border: none;
-      border-radius: 20px;
-      background: #ddd;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .tab-button.active {
-      background: #0b7285;
-      color: white;
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .checklist-item {
-      background: #f1f8fa;
-      border-left: 4px solid #0b7285;
-      padding: 12px 15px;
-      margin-bottom: 12px;
-      border-radius: 6px;
+    section {
+      margin-bottom: 2.5rem;
     }
 
     h2 {
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #ddd;
     }
+
+    details {
+      background: rgba(51, 66, 89, 0.694);
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 5px #6c8a4a;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.05rem;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .action-meta {
+      margin-top: 0.75rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .label {
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+  .hero {
+    position: relative;
+    min-height: 280px;
+    background-image: url("checklist image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .footer-note {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #d3d3d3;
+}
   </style>
 </head>
+
 <body>
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Smart Camera Risk Checklist</h1>
+      <p class="subtitle">A homeowner-focused guide organized by ownership stage</p>
+    </div>
+  </section>
+  
   <div class="container">
-    <h1>Smart Home Security Camera Checklist</h1>
-    <p class="subtitle">A practical checklist for non-technical homeowners</p>
-
-    <div class="tabs">
-      <button class="tab-button active" data-tab="buying">Before Buying</button>
-      <button class="tab-button" data-tab="setup">During Setup</button>
-      <button class="tab-button" data-tab="ongoing">Ongoing Use</button>
-    </div>
-
-    <div id="buying" class="tab-content active">
+    <section>
       <h2>Before Buying</h2>
-      <div class="checklist-item">Check whether the vendor provides regular firmware updates.</div>
-      <div class="checklist-item">Review whether cloud storage is optional or required.</div>
-      <div class="checklist-item">Look for support for strong passwords or multifactor authentication.</div>
-    </div>
 
-    <div id="setup" class="tab-content">
+      <details>
+        <summary>Check vendor support history</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> [1234]</p>
+          <p><span class="label">Impact:</span> [1234]</p>
+          <p><span class="label">Why it matters:</span> [1234]</p>
+          <p><span class="label">Example:</span> [1234]</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Review privacy and storage settings</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Avoid unsupported or end-of-life devices</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Compare authentication features</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+    </section>
+
+    <section>
       <h2>During Setup</h2>
-      <div class="checklist-item">Change the default password immediately.</div>
-      <div class="checklist-item">Disable remote access features you do not need.</div>
-      <div class="checklist-item">Update the camera firmware before regular use.</div>
-    </div>
 
-    <div id="ongoing" class="tab-content">
-      <h2>Ongoing Use</h2>
-      <div class="checklist-item">Review camera access permissions regularly.</div>
-      <div class="checklist-item">Check for firmware updates every few months.</div>
-      <div class="checklist-item">Remove or replace devices that no longer receive updates.</div>
-    </div>
+      <details>
+        <summary>Change default passwords immediately</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Review remote access settings</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Place cameras on a trusted network</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Install latest firmware before regular use</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>After Setup</h2>
+
+      <details>
+        <summary>Apply firmware updates regularly</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Monitor for unusual behavior</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Restrict physical and storage access</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Recheck privacy settings periodically</summary>
+        <div class="action-meta">
+          <p><span class="label">Risk:</span> 1234</p>
+          <p><span class="label">Impact:</span> 1234</p>
+          <p><span class="label">Why it matters:</span> 1234</p>
+          <p><span class="label">Example:</span> 1234</p>
+        </div>
+      </details>
+    </section>
+
+    <p class="footer-note">
+      Use this checklist as a starting point. Confirm security, privacy, storage, and update settings in your camera app and manufacturer support materials.
+    </p>
   </div>
-
-  <script>
-    const buttons = document.querySelectorAll(".tab-button");
-    const tabs = document.querySelectorAll(".tab-content");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const target = button.getAttribute("data-tab");
-
-        buttons.forEach(btn => btn.classList.remove("active"));
-        tabs.forEach(tab => tab.classList.remove("active"));
-
-        button.classList.add("active");
-        document.getElementById(target).classList.add("active");
-      });
-    });
-  </script>
 </body>
 </html>
